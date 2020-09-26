@@ -1,14 +1,14 @@
 quit -sim
 
-vlib altera
-vdel -lib altera -all
+vlib alteraa
+vdel -lib alteraa -all
 vlib work
 vdel -lib work -all
 
-vlib altera
+vlib alteraa
 # compile vendor dependent files
-vlog -work altera altera_mf.v
-vlog -work altera ../../par/altera/ip/dcfifo_128b_16.v
+vlog -work alteraa altera_mf.v
+vlog -work alteraa ../../par/altera/ip/dcfifo_128b_16.v
 
 vlib work
 # compile vendor independent files
@@ -42,7 +42,7 @@ exec gcc -shared -Bsymbolic -o ptp_drv_bfm_c.dll ptp_drv_bfm.o \
     ptp_drv_bfm_sv.obj -L $::env(MODEL_TECH) -lmtipli
 
 vsim -novopt \
-     -L altera \
+     -L alteraa \
      -sv_lib ptp_drv_bfm_c \
      -t ps \
      ha1588_tb 
