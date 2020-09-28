@@ -1,0 +1,12 @@
+# Ignorando arquivos que sao gerados apos simulacao do projeto que nao precisam ser publicados no servidor remoto..
+
+# Arquivos
+*.dll
+*.wlf
+dpiheader.h
+*.o
+*.obj
+
+# Pastas
+work/
+alteraa/
