@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Ignorando arquivos que sao gerados apos simulacao do projeto que nao precisam ser publicados no servidor remoto
-=======
-# Ignorando arquivos que sao gerados apos simulacao do projeto que nao precisam ser publicados no servidor remoto..
->>>>>>> simulacao
 
 # Arquivos
 *.dll
