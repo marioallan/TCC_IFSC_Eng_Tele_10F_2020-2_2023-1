@@ -1,14 +1,14 @@
 quit -sim
 
-vlib altera
-vdel -lib altera -all
+vlib alteraa
+vdel -lib alteraa -all
 vlib work
 vdel -lib work -all
 
-vlib altera
+vlib alteraa
 # compile vendor dependent files
-vlog -work altera altera_mf.v
-vlog -work altera ../../par/altera/ip/dcfifo_128b_16.v
+vlog -work alteraa altera_mf.v
+vlog -work alteraa ../../par/altera/ip/dcfifo_128b_16.v
 
 vlib work
 # compile vendor independent files
@@ -38,14 +38,9 @@ vsim -dpiexportobj ptp_drv_bfm_sv ptp_drv_bfm_sv
 # step 3: generate ptp_drv_bfm_c.obj
 exec gcc -c -I $::env(MODEL_TECH)/../include ptp_drv_bfm/ptp_drv_bfm.c
 # step 4: generate ptp_drv_bfm_c.dll
-exec gcc -shared -Bsymbolic -o ptp_drv_bfm_c.dll ptp_drv_bfm.o \
-    ptp_drv_bfm_sv.obj -L $::env(MODEL_TECH) -lmtipli
+exec gcc -shared -Bsymbolic -o ptp_drv_bfm_c.dll ptp_drv_bfm.o ptp_drv_bfm_sv.obj -L $::env(MODEL_TECH) -lmtipli
 
-vsim -novopt \
-     -L altera \
-     -sv_lib ptp_drv_bfm_c \
-     -t ps \
-     ha1588_tb 
+vsim -novopt -L alteraa -sv_lib ptp_drv_bfm_c -t ps ha1588_tb 
 
 log -r */*
 radix -hexadecimal
