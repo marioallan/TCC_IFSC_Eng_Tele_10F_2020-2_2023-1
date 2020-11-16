@@ -10,3 +10,6 @@ dpiheader.h
 # Pastas
 work/
 alteraa/
+db/
+incremental_db
+output/

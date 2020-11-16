@@ -38,13 +38,10 @@
 
 set_global_assignment -name FAMILY "Cyclone III"
 set_global_assignment -name DEVICE AUTO
-set_global_assignment -name TOP_LEVEL_ENTITY ha1588
+set_global_assignment -name TOP_LEVEL_ENTITY tsu
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "10.1 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "14:35:47  MARCH 31, 2012"
 set_global_assignment -name LAST_QUARTUS_VERSION 12.1
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name SMART_RECOMPILE ON
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output
 set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
@@ -65,5 +62,9 @@ set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
 set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
 set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
 
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 
+
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
